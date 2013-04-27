@@ -1,4 +1,6 @@
-== Grapho.js ==
+# Grapho.js
+
+## Motivation
 
 Grapho.js is a light-weight javascript library to manipulate graph structures empowered with aliases and graph theory algorithms.
 

@@ -1,0 +1,43 @@
+{
+  "name": "grapho",
+  "version": "1.0.0",
+  "description": "A JS library for manipulating graphs",
+  "main": "grapho.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^5.1.13",
+    "babelify": "^6.0.2",
+    "browserify": "^9.0.8",
+    "chai": "^2.3.0",
+    "esprima-harmony-jscs": "^1.1.0-bin",
+    "gulp": "^3.8.11",
+    "gulp-jscs-custom": "^0.1.3",
+    "gulp-jshint": "^1.10.0",
+    "gulp-mocha": "^2.0.1",
+    "gulp-uglify": "^1.2.0",
+    "jscs": "^1.13.0",
+    "jshint": "^2.7.0",
+    "jshint-stylish": "^1.0.1",
+    "mocha": "^2.2.4",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter dot --compilers js:babel/register test/**/*"
+  },
+  "keywords": [
+    "graph",
+    "theory",
+    "graphs"
+  ],
+  "author": "Breno Lima de Freitas",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brenolf/grapho.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brenolf/grapho.js/issues"
+  },
+  "homepage": "https://github.com/brenolf/grapho.js",
+  "license": "MIT"
+}

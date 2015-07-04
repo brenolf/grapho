@@ -1,21 +1,21 @@
-import Grapho from '../../src/grapho';
+import Grapho from '../../src/grapho'
 
-let G = new Grapho();
+let G = new Grapho()
 
-let v = G.vertex();
-let u = G.vertex();
-let w = G.vertex();
-let x = G.vertex();
-let y = G.vertex();
-let z = G.vertex();
+let v = G.vertex()
+let u = G.vertex()
+let w = G.vertex()
+let x = G.vertex()
+let y = G.vertex()
+let z = G.vertex()
 
-v.edge(u);
-w.edge(x);
-y.edge(w);
-y.edge(x);
-z.edge(y);
+v.edge(u)
+w.edge(x)
+y.edge(w)
+y.edge(x)
+z.edge(y)
 
-export {G, v, u, w, x, y, z};
+export {G, v, u, w, x, y, z}
 
 /*
 Graph G is as follows:

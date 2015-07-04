@@ -1,6 +1,7 @@
-import Grapho from '../src/grapho'
-import Vertex from '../src/vertex'
+import Grapho from '../src/grapho';
+import Vertex from '../src/vertex';
 import {expect} from 'chai';
+import graph from './fixtures/graph';
 
 describe('Grapho', () => {
   let G;

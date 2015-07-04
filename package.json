@@ -24,7 +24,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
-    "test": "mocha --reporter dot --compilers js:babel/register test/**/*"
+    "test": "mocha --reporter dot --compilers js:babel/register test/*.js"
   },
   "keywords": [
     "graph",

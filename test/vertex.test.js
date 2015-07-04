@@ -1,4 +1,4 @@
-import Vertex from '../src/vertex'
+import Vertex from '../src/vertex';
 import {expect} from 'chai';
 import sinon from 'sinon';
 

@@ -17,4 +17,24 @@ export default class Grapho {
 
     return v;
   }
+
+  find (source, target = null, algorithm = 'dfs') {
+    let TraversalAlgorithm;
+
+    try {
+      TraversalAlgorithm = require('./alg/' + algorithm);
+    }
+
+    catch (error) {
+      throw new ReferenceError(error.message);
+    }
+
+    let alg = new TraversalAlgorithm(this);
+
+    if (source.constructor !== Vertex) {
+      throw new TypeError();
+    }
+
+    return alg.find(source, target);
+  }
 }

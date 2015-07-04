@@ -1,9 +1,20 @@
+import Grapho from '../grapho';
+import Vertex from '../vertex';
+
 export default class BFS {
   constructor (G) {
+    if (G.constructor !== Grapho) {
+      throw new TypeError();
+    }
+
     this.N = G.N;
   }
 
   find (source, target = null) {
+    if (source.constructor !== Vertex) {
+      throw new TypeError();
+    }
+
     let v;
     let list = [];
     let queue = [source];

@@ -1,9 +1,20 @@
+import Grapho from '../grapho';
+import Vertex from '../vertex';
+
 export default class DFS {
   constructor (G) {
+    if (G.constructor !== Grapho) {
+      throw new TypeError();
+    }
+
     this.visited = new Array(G.N);
   }
 
   find (vertex, target = null) {
+    if (vertex.constructor !== Vertex) {
+      throw new TypeError();
+    }
+
     this.visited[vertex.index] = true;
 
     if (vertex === target) {

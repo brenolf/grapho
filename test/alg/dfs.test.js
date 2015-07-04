@@ -13,9 +13,19 @@ describe('DFS', () => {
     it('returns an instance of the class', () => {
       expect(dfs).to.be.an.instanceof(DFS)
     })
+
+    it('throws an error when no graph is given', () => {
+      expect(() => {new DFS()}).to.throw(TypeError);
+    })
   })
 
   describe('#find', () => {
+    context('when no source is given', () => {
+      it('throws a type error', () => {
+        expect(() => {dfs.find()}).to.throw(TypeError);
+      })
+    })
+
     context('when a target vertex is given', () => {
       context('when there is no path to the target', () => {
         it('returns an empty array', () => {

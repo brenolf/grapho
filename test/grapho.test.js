@@ -25,7 +25,7 @@ describe('Grapho', () => {
 
     context('when a parameter is passed', () => {
       context('when a Vertex object is passed', () => {
-        it('returns the instance itself and adds it to the graph', () => {
+        it('returns the added object and adds it to the graph', () => {
           let u = new Vertex();
 
           expect(() => {G.vertex(u)}).not.to.throw(TypeError);
@@ -37,7 +37,6 @@ describe('Grapho', () => {
       context('when an invalid object is passed', () => {
         it('throws an type error', () => {
           expect(() => {G.vertex(new Object())}).to.throw(TypeError);
-          expect(() => {G.vertex('1234567890')}).to.throw(TypeError);
           expect(() => {G.vertex(123456789012)}).to.throw(TypeError);
         });
       });

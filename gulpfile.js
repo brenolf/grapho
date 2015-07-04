@@ -14,7 +14,7 @@ gulp.task('test', ['code-style', 'code-lint'], function () {
     require('babel/register');
 
     return gulp
-    .src('./test/*.js', {read: false})
+    .src('./test/**/*.test.js', {read: false})
     .pipe(mocha({reporter: 'dot'}));
 });
 

@@ -10,10 +10,21 @@ let y = G.vertex();
 let z = G.vertex();
 
 v.edge(u);
-u.edge(w);
 w.edge(x);
 y.edge(w);
 y.edge(x);
 z.edge(y);
 
-export default G;
+export {G, v, u, w, x, y, z};
+
+/*
+Graph G is as follows:
+
+u -- v
+
+w
+| \
+|  y -- z
+| /
+x
+*/

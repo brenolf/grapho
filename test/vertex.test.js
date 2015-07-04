@@ -1,11 +1,18 @@
 import Vertex from '../src/vertex'
 import {expect} from 'chai';
+import sinon from 'sinon';
 
 describe('Vertex', () => {
   let v;
+  let oneSet = new Set([sinon.createStubInstance(Vertex)]);
+  let twoSet = new Set([sinon.createStubInstance(Vertex), sinon.createStubInstance(Vertex)]);
 
   beforeEach(() => {
     v = new Vertex();
+  });
+
+  afterEach(function(){
+    sinon.restore();
   });
 
   describe('#constructor', () => {
@@ -15,9 +22,23 @@ describe('Vertex', () => {
   });
 
   describe('#degree', () => {
-    it('return the number of neighbours', () => {
-      v.neighbours = new Set([new Vertex(), new Vertex()]);
+    it('returns the number of neighbours', () => {
+      v.neighbours = twoSet;
       expect(v.degree).to.eql(2);
+    });
+  });
+
+  describe('#odd', () => {
+    it('returns whether or not the vertex is odd', () => {
+      v.neighbours = oneSet;
+      expect(v.odd).to.be.true;
+    });
+  });
+
+  describe('#even', () => {
+    it('returns whether or not the vertex is even', () => {
+      v.neighbours = twoSet;
+      expect(v.even).to.be.true;
     });
   });
 

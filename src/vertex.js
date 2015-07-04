@@ -28,4 +28,12 @@ export default class Vertex {
   get degree () {
     return this.neighbours.size;
   }
+
+  get even () {
+    return this.neighbours.size % 2 === 0;
+  }
+
+  get odd () {
+    return this.neighbours.size % 2 !== 0;
+  }
 }

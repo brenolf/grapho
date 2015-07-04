@@ -19,8 +19,11 @@ describe('Grapho', () => {
   describe('#vertex', () => {
     context('when no parameter is passed', () => {
       it('adds a new vertex to the graph', () => {
-        expect(G.vertex()).to.be.instanceof(Vertex);
+        let v = G.vertex();
+
+        expect(v).to.be.instanceof(Vertex);
         expect(G.V.size).to.eql(1);
+        expect(v.index).to.not.be.undefined;
       });
     });
 
@@ -32,6 +35,7 @@ describe('Grapho', () => {
           expect(() => {G.vertex(u)}).not.to.throw(TypeError);
           expect(G.vertex(u)).to.eql(u);
           expect(G.V.size).to.eql(1);
+          expect(u.index).to.not.be.undefined;
         });
       });
 

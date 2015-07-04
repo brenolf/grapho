@@ -3,6 +3,7 @@ import Vertex from './vertex';
 export default class Grapho {
   constructor () {
     this.V = new Set();
+    this.N = 0;
   }
 
   vertex (v = new Vertex()) {
@@ -11,6 +12,8 @@ export default class Grapho {
     }
 
     this.V.add(v);
+
+    v.index = this.N++;
 
     return v;
   }

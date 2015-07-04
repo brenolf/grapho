@@ -26,10 +26,6 @@ export default class BFS {
       }
     }
 
-    if (target !== null) {
-      return [];
-    }
-
-    return list;
+    return (target !== null) ? [] : list;
   }
 }

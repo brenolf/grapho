@@ -14,17 +14,23 @@ describe('Vertex', () => {
     });
   });
 
-  describe.skip('#degree', () => {
-    before(() => {
-      v.neighbours = new Set([new Vertex(), new Vertex()]);
-    });
-
+  describe('#degree', () => {
     it('return the number of neighbours', () => {
+      v.neighbours = new Set([new Vertex(), new Vertex()]);
       expect(v.degree).to.eql(2);
     });
   });
 
-  describe.skip('#arc', () => {
+  describe('#arc', () => {
+    it('adds the same vertex only once', () => {
+      let u = new Vertex();
+
+      v.arc(v);
+      v.arc(v);
+
+      expect(v.neighbours.size).to.eql(1);
+    });
+
     context('when a Vertex object is passed', () => {
       it('returns the instance itself and adds it to the neighbours of v', () => {
         let u = new Vertex();
@@ -43,7 +49,16 @@ describe('Vertex', () => {
     });
   });
 
-  describe.skip('#edge', () => {
+  describe('#edge', () => {
+    it('adds the same vertex only once', () => {
+      let u = new Vertex();
+
+      v.edge(v);
+      v.edge(v);
+
+      expect(v.neighbours.size).to.eql(1);
+    });
+
     context('when a Vertex object is passed', () => {
       it('returns the instance itself and adds it to the neighbours of both v and u', () => {
         let u = new Vertex();

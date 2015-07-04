@@ -8,13 +8,9 @@ var gulp        = require('gulp'),
     jscs        = require('gulp-jscs-custom'),
     mocha       = require('gulp-mocha');
 
-gulp.task ('default', ['code-check', 'test']);
+gulp.task ('default', ['code-style', 'code-lint', 'test']);
 
-gulp.task ('watch', ['static'], function () {
-    gulp.watch('./src/js/**/*', ['scripts']);
-});
-
-gulp.task('test', ['code-check'], function () {
+gulp.task('test', ['code-style', 'code-lint'], function () {
     require('babel/register');
 
     return gulp
@@ -22,12 +18,17 @@ gulp.task('test', ['code-check'], function () {
     .pipe(mocha({reporter: 'dot'}));
 });
 
-gulp.task ('code-check', function () {
+gulp.task ('code-style', function () {
   return gulp
-  .src('./src/js/**/*')
-  .pipe(jshint())
-  .pipe(jshint.reporter('jshint-stylish'))
+  .src('./src/**/*')
   .pipe(jscs({esnext: true}));
+});
+
+gulp.task ('code-lint', function () {
+  return gulp
+  .src('./src/**/*')
+  .pipe(jshint())
+  .pipe(jshint.reporter('jshint-stylish'));
 });
 
 gulp.task ('build', function () {

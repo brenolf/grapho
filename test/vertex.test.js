@@ -11,7 +11,7 @@ describe('Vertex', () => {
     v = new Vertex();
   });
 
-  afterEach(function(){
+  afterEach(() => {
     sinon.restore();
   });
 
@@ -52,6 +52,17 @@ describe('Vertex', () => {
       expect(v.neighbours.size).to.eql(1);
     });
 
+    context('when the arc has a weight', () => {
+      it('adds the correct tuple to the neighbours of v', () => {
+        let u = new Vertex();
+        let w = 120;
+
+        v.arc(u, w);
+
+        expect(v.weights).to.have.property(u, w);
+      });
+    });
+
     context('when a Vertex object is passed', () => {
       it('returns the instance itself and adds it to the neighbours of v', () => {
         let u = new Vertex();
@@ -78,6 +89,18 @@ describe('Vertex', () => {
       v.edge(v);
 
       expect(v.neighbours.size).to.eql(1);
+    });
+
+    context('when the arc has a weight', () => {
+      it('adds the correct tuple to the neighbours of both v and u', () => {
+        let u = new Vertex();
+        let w = 120;
+
+        v.edge(u, w);
+
+        expect(v.weights).to.have.property(u, w);
+        expect(u.weights).to.have.property(v, w);
+      });
     });
 
     context('when a Vertex object is passed', () => {

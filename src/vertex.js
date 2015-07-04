@@ -2,25 +2,30 @@ export default class Vertex {
   constructor (index) {
     this.index = index;
     this.neighbours = new Set();
+    this.weights = {};
   }
 
-  arc (v) {
+  arc (v, w = null) {
     if (v.constructor !== Vertex) {
       throw new TypeError();
     }
 
     this.neighbours.add(v);
+    this.weights[v] = w;
 
     return this;
   }
 
-  edge (v) {
+  edge (v, w = null) {
     if (v.constructor !== Vertex) {
       throw new TypeError();
     }
 
-    this.arc(v);
+    this.neighbours.add(v);
     v.neighbours.add(this);
+
+    this.weights[v] = w;
+    v.weights[this] = w;
 
     return this;
   }

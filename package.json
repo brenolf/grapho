@@ -15,6 +15,7 @@
     "gulp-jshint": "^1.10.0",
     "gulp-mocha": "^2.0.1",
     "gulp-uglify": "^1.2.0",
+    "js-priority-queue": "^0.1.1",
     "jscs": "^1.13.0",
     "jshint": "^2.7.0",
     "jshint-stylish": "^1.0.1",

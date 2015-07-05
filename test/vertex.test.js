@@ -8,7 +8,7 @@ describe('Vertex', () => {
   let twoSet = new Set([sinon.createStubInstance(Vertex), sinon.createStubInstance(Vertex)])
 
   beforeEach(() => {
-    v = new Vertex()
+    v = new Vertex(999)
   })
 
   afterEach(() => {
@@ -54,12 +54,12 @@ describe('Vertex', () => {
 
     context('when the arc has a weight', () => {
       it('adds the correct tuple to the neighbours of v', () => {
-        let u = new Vertex()
+        let u = new Vertex(42)
         let w = 120
 
         v.arc(u, w)
 
-        expect(v.weights).to.have.property(u, w)
+        expect(v.weights).to.have.property(42, w)
       })
     })
 
@@ -93,13 +93,13 @@ describe('Vertex', () => {
 
     context('when the arc has a weight', () => {
       it('adds the correct tuple to the neighbours of both v and u', () => {
-        let u = new Vertex()
+        let u = new Vertex(42)
         let w = 120
 
         v.edge(u, w)
 
-        expect(v.weights).to.have.property(u, w)
-        expect(u.weights).to.have.property(v, w)
+        expect(v.weights).to.have.property(42, w)
+        expect(u.weights).to.have.property(999, w)
       })
     })
 

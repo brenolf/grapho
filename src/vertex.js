@@ -11,7 +11,7 @@ export default class Vertex {
     }
 
     this.neighbours.add(v);
-    this.weights[v] = w;
+    this.weights[v.index] = w;
 
     return this;
   }
@@ -24,8 +24,8 @@ export default class Vertex {
     this.neighbours.add(v);
     v.neighbours.add(this);
 
-    this.weights[v] = w;
-    v.weights[this] = w;
+    this.weights[v.index] = w;
+    v.weights[this.index] = w;
 
     return this;
   }

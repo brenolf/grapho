@@ -19,10 +19,14 @@ export default class Grapho {
   }
 
   find (source, target = null, algorithm = 'dfs') {
+    if (source.constructor !== Vertex) {
+      throw new TypeError();
+    }
+
     let TraversalAlgorithm;
 
     try {
-      TraversalAlgorithm = require('./alg/' + algorithm);
+      TraversalAlgorithm = require('./alg/traversal/' + algorithm);
     }
 
     catch (error) {
@@ -30,10 +34,6 @@ export default class Grapho {
     }
 
     let alg = new TraversalAlgorithm(this);
-
-    if (source.constructor !== Vertex) {
-      throw new TypeError();
-    }
 
     return alg.find(source, target);
   }

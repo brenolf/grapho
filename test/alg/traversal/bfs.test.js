@@ -1,50 +1,49 @@
-import DFS from '../../src/alg/dfs'
+import BFS from '../../../src/alg/traversal/bfs'
 import {expect} from 'chai'
-import * as Graph from '../fixtures/graph'
+import * as Graph from '../../fixtures/graph'
 
-describe('DFS', () => {
-  let dfs
+describe('BFS', () => {
+  let bfs
 
   beforeEach(() => {
-    dfs = new DFS(Graph.G)
+    bfs = new BFS(Graph.G)
   })
 
   describe('#constructor', () => {
     it('returns an instance of the class', () => {
-      expect(dfs).to.be.an.instanceof(DFS)
+      expect(bfs).to.be.an.instanceof(BFS)
     })
 
     it('throws an error when no graph is given', () => {
-      expect(() => {new DFS()}).to.throw(TypeError);
+      expect(() => {new BFS()}).to.throw(TypeError);
     })
   })
 
   describe('#find', () => {
     context('when no source is given', () => {
       it('throws a type error', () => {
-        expect(() => {dfs.find()}).to.throw(TypeError);
+        expect(() => {bfs.find()}).to.throw(TypeError);
       })
     })
 
     context('when a target vertex is given', () => {
       context('when there is no path to the target', () => {
         it('returns an empty array', () => {
-          expect(dfs.find(Graph.u, Graph.w)).to.be.empty
+          expect(bfs.find(Graph.u, Graph.w)).to.be.empty
         })
       })
 
       context('when there is a path to the target', () => {
         it('returns a valid path to the target', () => {
-          let answer = [Graph.z, Graph.y, Graph.w]
-          expect(dfs.find(Graph.z, Graph.w)).to.eql(answer)
+          let answer = [Graph.w, Graph.x, Graph.y, Graph.z]
+          expect(bfs.find(Graph.w, Graph.z)).to.eql(answer)
         })
       })
     })
 
     context('when no target vertex is given', () => {
       it('explores the whole component rooted in source', () => {
-        let answer = [Graph.w, Graph.x, Graph.y, Graph.z]
-        expect(dfs.find(Graph.w)).to.eql(answer)
+        expect(bfs.find(Graph.v)).to.eql([Graph.v, Graph.u])
       })
     })
   })

@@ -1,5 +1,5 @@
-import Grapho from '../grapho';
-import Vertex from '../vertex';
+import Grapho from '../../grapho';
+import Vertex from '../../vertex';
 
 export default class BFS {
   constructor (G) {

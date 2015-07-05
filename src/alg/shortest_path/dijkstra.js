@@ -2,7 +2,6 @@ import Grapho from '../../grapho';
 import Vertex from '../../vertex';
 import PriorityQueue from 'js-priority-queue';
 
-const INFINITY = Number.MAX_SAFE_INTEGER;
 let distance = [];
 
 export default class Dijikstra {
@@ -34,7 +33,7 @@ export default class Dijikstra {
     let tail = -1;
 
     for (let v of this.G.V) {
-      distance[v.index] = INFINITY;
+      distance[v.index] = Infinity;
       parent[v.index] = [null, -1];
       visited[v.index] = false;
       H_vertices[v.index] = null;

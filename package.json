@@ -1,8 +1,8 @@
 {
   "name": "grapho",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JS library for manipulating graphs",
-  "main": "grapho.js",
+  "main": "app.js",
   "dependencies": {},
   "devDependencies": {
     "babel": "^5.1.13",

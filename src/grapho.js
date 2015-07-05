@@ -27,9 +27,7 @@ export default class Grapho {
 
     try {
       TraversalAlgorithm = require('./alg/traversal/' + algorithm);
-    }
-
-    catch (error) {
+    } catch (error) {
       throw new ReferenceError(error.message);
     }
 

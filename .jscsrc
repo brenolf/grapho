@@ -6,7 +6,7 @@
   "disallowKeywordsOnNewLine": ["else"],
   "requireSpaceAfterKeywords": true,
   "requireSpaceBeforeKeywords": true,
-  "requirePaddingNewlinesBeforeKeywords": true,
+  "requirePaddingNewlinesBeforeKeywords": ["do", "for", "if", "switch", "case", "try", "void","return", "function"],
   "disallowKeywords": ["with"],
   "disallowMultipleLineBreaks": true,
   "disallowEmptyBlocks": true,

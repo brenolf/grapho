@@ -37,9 +37,11 @@ describe('Dijkstra', () => {
     context('when there is no target', () => {
       it('returns a shortest path tree rooted in source', () => {
         let tree = dijkstra.find(Graph.v)
+        let n = Tree.G.V.size
+        let weight = graph_edge_weight(Tree.G)
 
-        expect(tree.V.size).to.eql(6)
-        expect(graph_edge_weight(tree)).to.eql(7)
+        expect(tree.V.size).to.eql(n)
+        expect(graph_edge_weight(tree)).to.eql(weight)
       })
     })
 

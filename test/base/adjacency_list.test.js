@@ -1,6 +1,6 @@
-import AdjacencyList from '../src/adjacency_list'
-import Vertex from '../src/vertex'
-import Arc from '../src/arc'
+import AdjacencyList from '../../src/base/adjacency_list'
+import Vertex from '../../src/base/vertex'
+import Arc from '../../src/base/arc'
 import {expect} from 'chai'
 import sinon from 'sinon'
 

@@ -1,5 +1,5 @@
-import Grapho from '../../grapho';
-import Vertex from '../../vertex';
+import Grapho from '../../base/grapho';
+import Vertex from '../../base/vertex';
 import PriorityQueue from 'js-priority-queue';
 
 let distance = [];

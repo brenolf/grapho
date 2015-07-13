@@ -1,4 +1,4 @@
-import Grapho from '../../src/grapho';
+import Grapho from '../../src/base/grapho';
 
 export default function graph_edge_weight (G) {
   if (G.constructor !== Grapho) {

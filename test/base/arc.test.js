@@ -1,5 +1,5 @@
-import Arc from '../src/arc'
-import Vertex from '../src/vertex'
+import Arc from '../../src/base/arc'
+import Vertex from '../../src/base/vertex'
 import {expect} from 'chai'
 import sinon from 'sinon'
 

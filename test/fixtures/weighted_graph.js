@@ -1,4 +1,4 @@
-import Grapho from '../../src/grapho'
+import Grapho from '../../src/base/grapho'
 
 let G = new Grapho()
 

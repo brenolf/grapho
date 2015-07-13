@@ -1,10 +1,10 @@
-import Grapho from '../src/grapho'
-import Vertex from '../src/vertex'
+import Grapho from '../../src/base/grapho'
+import Vertex from '../../src/base/vertex'
 import {expect} from 'chai'
 import sinon from 'sinon'
-import BFS from '../src/alg/traversal/bfs'
-import DFS from '../src/alg/traversal/dfs'
-import * as Graph from './fixtures/graph'
+import BFS from '../../src/alg/traversal/bfs'
+import DFS from '../../src/alg/traversal/dfs'
+import * as Graph from '../fixtures/graph'
 
 describe('Grapho', () => {
   let G

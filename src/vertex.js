@@ -1,8 +1,9 @@
+import AdjacencyList from './adjacency_list';
+
 export default class Vertex {
   constructor (index) {
     this.index = index;
-    this.neighbours = new Set();
-    this.weights = {};
+    this.adjacency = new AdjacencyList(this);
   }
 
   arc (v, w = null) {
@@ -10,10 +11,7 @@ export default class Vertex {
       throw new TypeError();
     }
 
-    this.neighbours.add(v);
-    this.weights[v.index] = w;
-
-    return this;
+    return this.adjacency.add(v, w);
   }
 
   edge (v, w = null) {
@@ -21,24 +19,28 @@ export default class Vertex {
       throw new TypeError();
     }
 
-    this.neighbours.add(v);
-    v.neighbours.add(this);
+    v.adjacency.add(this, w);
 
-    this.weights[v.index] = w;
-    v.weights[this.index] = w;
+    return this.adjacency.add(v, w);
+  }
 
-    return this;
+  get weights () {
+    return this.adjacency.weights();
+  }
+
+  get neighbours () {
+    return this.adjacency.neighbours();
   }
 
   get degree () {
-    return this.neighbours.size;
+    return this.adjacency.size;
   }
 
   get even () {
-    return this.neighbours.size % 2 === 0;
+    return this.adjacency.size % 2 === 0;
   }
 
   get odd () {
-    return this.neighbours.size % 2 !== 0;
+    return this.adjacency.size % 2 !== 0;
   }
 }

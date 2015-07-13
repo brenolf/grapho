@@ -11,10 +11,6 @@ describe('Vertex', () => {
     v = new Vertex(999)
   })
 
-  afterEach(() => {
-    sinon.restore()
-  })
-
   describe('#constructor', () => {
     it('returns an instance of the class', () => {
       expect(v).to.be.an.instanceof(Vertex)
